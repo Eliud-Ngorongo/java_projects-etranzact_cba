@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Value;
 
+import java.math.BigDecimal;
+
 @Data
 @Builder
 @Value
@@ -14,6 +16,9 @@ public class CreateAccountResponseDto {
 
     @JsonProperty("success") private String success;
     @JsonProperty("deposit_success") private String deposit_success;
+
+    @JsonProperty("currency") private String currency;
+    @JsonProperty("deposited_amount") private BigDecimal deposited_amount;
 
     @JsonProperty("userId") private String userId;
     @JsonProperty("accountNum") private String accountNum;

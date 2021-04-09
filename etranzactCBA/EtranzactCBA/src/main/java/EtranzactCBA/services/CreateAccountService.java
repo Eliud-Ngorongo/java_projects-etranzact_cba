@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 
 import javax.inject.Singleton;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.UUID;
@@ -126,6 +127,8 @@ public class CreateAccountService {
             createAccountResponseDto = CreateAccountResponseDto.builder()
                     .success(success)
                     .deposit_success(String.valueOf(deposit_success))
+                    .currency(currency)
+                    .deposited_amount(amount)
                     .userId( String.valueOf(accountID) )
                     .accountNum(accountNum_str)
                     .accountType(AccountType.SAVINGS.toString())
@@ -204,9 +207,11 @@ public class CreateAccountService {
                 createAccountResponseDto = CreateAccountResponseDto.builder()
                         .success(success)
                         .deposit_success(String.valueOf(deposit_success))
+                        .currency(currency)
+                        .deposited_amount(amountToBeCreditedToCustomer(amount))
                         .userId( String.valueOf(accountID) )
                         .accountNum(accountNum_str)
-                        .accountType(AccountType.SAVINGS.toString())
+                        .accountType(AccountType.CURRENT.toString())
                         .accountBranch(accountBranch)
                         .verified(verified)
                         .build();
@@ -280,6 +285,11 @@ public class CreateAccountService {
                     //the amount and currency makes sense
                     //start transactionService process :
 
+                    //2. There is a 1% charge on every CURRENT account transaction.
+                    //In addition, the daily total withdrawal shall not exceed Gh 5000 for all account types.
+
+                    BigDecimal amountToBeCreditedToCustomer = amountToBeCreditedToCustomer(amount);
+
                     return true;
 
 
@@ -294,6 +304,18 @@ public class CreateAccountService {
         }
 
 
+    }
+
+    public BigDecimal amountToBeCreditedToCustomer (BigDecimal amount){
+        BigDecimal basicChargeForCurrentAccount = new BigDecimal(0.01);
+
+        BigDecimal currentAccountCharge = amount.multiply(basicChargeForCurrentAccount);
+
+        BigDecimal amountToBeCreditedToCustomer = amount.subtract(currentAccountCharge);
+
+        amountToBeCreditedToCustomer = amountToBeCreditedToCustomer.setScale(4, RoundingMode.FLOOR);
+
+        return amountToBeCreditedToCustomer;
     }
 
     public String createAccount_Savings(
@@ -351,6 +373,10 @@ public class CreateAccountService {
         //validate branched passed
         if(validateBranch(accountBranch)){
 
+            //Proceed to saving the information to the database
+
+
+
             return Status.SUCCESS.toString();
 
         }else{
@@ -403,7 +429,5 @@ public class CreateAccountService {
                 (amount.compareTo(minAmount) == Dry.BIG_DECIMAL_A_GREATER_THAN_B | amount.compareTo(minAmount) == Dry.BIG_DECIMAL_A_EQUAL_TO_B);
     }
 
-
-    //
 
 }
