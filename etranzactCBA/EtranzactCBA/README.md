@@ -98,7 +98,7 @@ And when running Etranzact Core Banking Application locally, you can just `cd ./
 The following environment variables [and more to be added] are been used by the application.
 
 ```
-## Get the details from Del
+## Get the details from System Admin : 
 export ETRANZACT_CLIENT_ID=
 export ETRANZACT_CLIENT_SECRET=
 export ETRANZACT_USERNAME=
