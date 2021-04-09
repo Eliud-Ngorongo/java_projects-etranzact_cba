@@ -69,7 +69,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"user\" : {\n        \"accountType\" : \"SAVINGS\", \n\n        \"userNameFirst\" : \"John\",\n        \"userNameMiddle\" : \"Jali\",\n        \"userNameLast\" : \"Doe\",\n\n        \"userDOB\" : \"1987-08-21\",\n        \"profession\" : \"Software Developer\",\n        \"phoneNumber\" : \"+233 242 550 332\",\n        \"address\" : \"Box NT 277, Ksi.\",\n\n        \"verified\" : 0\n    }\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -107,7 +107,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"user\" : {\n        \"accountType\" : \"SAVINGS\", \n\n        \"userNameFirst\" : \"John\",\n        \"userNameMiddle\" : \"Jali\",\n        \"userNameLast\" : \"Doe\",\n\n        \"userDOB\" : \"1987-08-21\",\n        \"profession\" : \"Software Developer\",\n        \"phoneNumber\" : \"+233 242 550 332\",\n        \"address\" : \"Box NT 277, Ksi.\",\n\n        \"verified\" : 0\n    }\n}",
+					"raw": "{\n    \"source\" : {\n\n        \"userId\" : \"SIDFH3893749248FDFSDF\",\n        \"accountNum\" : \"383783479287\",\n \n        \"currency\" : \"GHS\",\n        \"amount\" : 50.00,\n\n        \"action_AccountType\" : \"E_WALLET\",\n\n        \"phone_number\" : \"233242550332\",\n\n        \"verified\" : 0\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -115,9 +115,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{localhost}}createAccountRequest",
+					"raw": "{{localhost}}/transactions/payment",
 					"host": [
-						"{{localhost}}createAccountRequest"
+						"{{localhost}}"
+					],
+					"path": [
+						"transactions",
+						"payment"
 					]
 				},
 				"description": "this creates an account for this 'rich' customer"
@@ -131,7 +135,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"user\" : {\n        \"accountType\" : \"SAVINGS\", \n\n        \"userNameFirst\" : \"John\",\n        \"userNameMiddle\" : \"Jali\",\n        \"userNameLast\" : \"Doe\",\n\n        \"userDOB\" : \"1987-08-21\",\n        \"profession\" : \"Software Developer\",\n        \"phoneNumber\" : \"+233 242 550 332\",\n        \"address\" : \"Box NT 277, Ksi.\",\n\n        \"verified\" : 0\n    }\n}",
+					"raw": "{\n    \"destination\" : {\n\n        \"accountType\" : \"SAVINGS\", \n        \"currency\" : \"GHS\",\n        \"amount\" : 50.00,\n\n        \"action_AccountType\" : \"E_WALLET\",\n\n        \"phone_number\" : \"233242550332\",\n\n        \"verified\" : 0\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -153,13 +157,69 @@
 			"response": []
 		},
 		{
-			"name": "transactions -> transfer",
+			"name": "transactions -> transfer to E_Wallet",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"user\" : {\n        \"accountType\" : \"SAVINGS\", \n\n        \"userNameFirst\" : \"John\",\n        \"userNameMiddle\" : \"Jali\",\n        \"userNameLast\" : \"Doe\",\n\n        \"userDOB\" : \"1987-08-21\",\n        \"profession\" : \"Software Developer\",\n        \"phoneNumber\" : \"+233 242 550 332\",\n        \"address\" : \"Box NT 277, Ksi.\",\n\n        \"verified\" : 0\n    }\n}",
+					"raw": "{\n    \"source\" : {\n\n        \"userId\" : \"SIDFH3893749248FDFSDF\",\n        \"accountNum\" : \"383783479287\",\n \n        \"currency\" : \"GHS\",\n        \"amount\" : 50.00,\n\n        \"action_AccountType\" : \"E_WALLET\",\n\n        \"phone_number\" : \"233242550332\",\n\n        \"verified\" : 0\n    },\n    \"destination\" : {\n\n        \"currency\" : \"GHS\",\n        \"amount\" : 50.00,\n\n        \"action_AccountType\" : \"E_WALLET\",\n\n        \"phone_number\" : \"233242550332\",\n\n        \"verified\" : 0\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/transactions/transfer",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"transactions",
+						"transfer"
+					]
+				},
+				"description": "this creates an account for this 'rich' customer"
+			},
+			"response": []
+		},
+		{
+			"name": "transactions -> transfer to Bank",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"source\" : {\n\n        \"userId\" : \"SIDFH3893749248FDFSDF\",\n        \"accountNum\" : \"383783479287\",\n \n        \"currency\" : \"GHS\",\n        \"amount\" : 50.00,\n\n        \"action_AccountType\" : \"E_WALLET\",\n\n        \"phone_number\" : \"233242550332\",\n\n        \"verified\" : 0\n    },\n    \"destination\" : {\n\n        \"currency\" : \"GHS\",\n        \"amount\" : 50.00,\n\n        \"action_AccountType\" : \"BANK\",\n\n        \"phone_number\" : \"233242550332\",\n\n        \"bankDetails\" : {\n            \"accountNumber\" : \"23836459309488574\",\n            \"bankName\" : \"ZenithBank\",\n            \"bankCode\" : \"GH-0038272\"\n        },\n\n        \"verified\" : 0\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/transactions/transfer",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"transactions",
+						"transfer"
+					]
+				},
+				"description": "this creates an account for this 'rich' customer"
+			},
+			"response": []
+		},
+		{
+			"name": "transactions -> transfer to Card",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"source\" : {\n\n        \"userId\" : \"SIDFH3893749248FDFSDF\",\n        \"accountNum\" : \"383783479287\",\n \n        \"currency\" : \"GHS\",\n        \"amount\" : 50.00,\n\n        \"action_AccountType\" : \"E_WALLET\",\n\n        \"phone_number\" : \"233242550332\",\n\n        \"verified\" : 0\n    },\n    \"destination\" : {\n\n        \"currency\" : \"GHS\",\n        \"amount\" : 50.00,\n\n        \"action_AccountType\" : \"CARD\",\n\n        \"phone_number\" : \"233242550332\",\n\n        \"verified\" : 0\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"

@@ -26,7 +26,7 @@ public class CreateAccountRequestController {
 
     @Post
     public HttpResponse createAccountRequested(
-          @Body  CreateAccountRequestDto createAccountRequestDto
+          @Body CreateAccountRequestDto createAccountRequestDto
     ) {
 
         LOGGER.info("The request body : /createAccountRequest : {}", createAccountRequestDto.toString());
