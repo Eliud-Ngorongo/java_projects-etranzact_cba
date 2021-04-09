@@ -95,10 +95,14 @@ And when running Etranzact Core Banking Application locally, you can just `cd ./
  
 ## Environment Variables
 
-The following environment variables are being used by the application.
+The following environment variables [and more to be added] are been used by the application.
 
 ```
 ## Get the details from Del
+export ETRANZACT_CLIENT_ID=
+export ETRANZACT_CLIENT_SECRET=
+export ETRANZACT_USERNAME=
+export ETRANZACT_PASSWORD=
 export FIXER_IO_API_KEY=
 export AT_API_KEY=
 export AT_API_USERNAME=
