@@ -28,29 +28,31 @@ public class CreateAccountService {
 
         LOGGER.info("CreateAccountRequestDto : {}", createAccountRequestDto.toString());
 
-        //CreateAccountRequestDto.User user_x = createAccountRequestDto.getUser();
+        //CreateAccountRequestDto user_x = createAccountRequestDto;
+
+        CreateAccountRequestDto.User user_x = createAccountRequestDto.getUser();
 
 
-        String userId = createAccountRequestDto.getUserId();
-        String accountNum = createAccountRequestDto.getAccountNum();
+        String userId = user_x.getUser_id();
+        String accountNum = user_x.getAccount_number();
 
-        String transactionChannel = createAccountRequestDto.getTransactionChannel();
-        String currency = createAccountRequestDto.getCurrency();
-        BigDecimal amount = createAccountRequestDto.getAmount();
+        String transactionChannel = user_x.getTransaction_channel();
+        String currency = user_x.getCurrency();
+        BigDecimal amount = user_x.getAmount();
 
-         String accountType = createAccountRequestDto.getAccountType();
-         String accountBranch = createAccountRequestDto.getAccountBranch();
+         String accountType = user_x.getAccount_type();
+         String accountBranch = user_x.getAccount_branch();
 
-         String userNameFirst = createAccountRequestDto.getUserNameFirst();
-         String userNameMiddle = createAccountRequestDto.getUserNameMiddle();
-         String userNameLast = createAccountRequestDto.getUserNameLast();
+         String userNameFirst = user_x.getUser_name_first();
+         String userNameMiddle = user_x.getUser_name_middle();
+         String userNameLast = user_x.getUser_name_last();
 
-         String userDOB = createAccountRequestDto.getUserDOB();
-         String profession = createAccountRequestDto.getProfession();
-         String phoneNumber = createAccountRequestDto.getPhoneNumber();
-         String address = createAccountRequestDto.getAddress();
+         String userDOB = user_x.getUser_dob();
+         String profession = user_x.getProfession();
+         String phoneNumber = user_x.getPhone_number();
+         String address = user_x.getAddress();
 
-         int verified = createAccountRequestDto.getVerified();
+         int verified = user_x.getVerified();
 
          String success = Status.FAILED.toString();
 

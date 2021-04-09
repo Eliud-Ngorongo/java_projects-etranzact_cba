@@ -1,6 +1,6 @@
 package EtranzactCBA.pojo;
 
-public enum AccountType {
+public enum AccountType {//Bank
     CURRENT,
     SAVINGS
 }

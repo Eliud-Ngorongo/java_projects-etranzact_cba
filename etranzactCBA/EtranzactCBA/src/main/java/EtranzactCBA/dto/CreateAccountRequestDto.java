@@ -1,92 +1,57 @@
 package EtranzactCBA.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
 import java.math.BigDecimal;
 
-
 @Data
-@Builder
-@Value
+@Builder(toBuilder = true)
+@Setter
 @Getter
-//@AllArgsConstructor(access = AccessLevel.PRIVATE)
-//@NoArgsConstructor(access = AccessLevel.PUBLIC)
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
+//@JsonDeserialize(builder = CreateAccountRequestDto.class)
 public class CreateAccountRequestDto {
 
+    //@JsonProperty("user")
 
-    private String accountType;
-    private String accountBranch;
-
-    private String userId;
-    private String accountNum;
-
-    private String userNameFirst;
-    private String userNameMiddle;
-    private String userNameLast;
-
-    private String userDOB;
-    private String profession;
-    private String phoneNumber;
-    private String address;
-
-    private int verified;
-
-    private String transactionChannel;
-    private String currency;
-    private BigDecimal amount;
-
-
-
-    public static User user;
+    @Getter
+    public User user;
 
     @Data
     public static class User {
 
-        private String accountType;
-        private String accountBranch;
+        private String account_type;
+        private String account_branch;
 
-        private String userId;
-        private String accountNum;
+        private String user_id;
+        private String account_number;
 
-        private String userNameFirst;
-        private String userNameMiddle;
-         private String userNameLast;
+        private String user_name_first;
+        private String user_name_middle;
+         private String user_name_last;
 
-        private String userDOB;
+        private String user_dob;
         private String profession;
-        private String phoneNumber;
+        private String phone_number;
         private String address;
 
         private int verified;
 
-        private String transactionChannel;
+        private String transaction_channel;
 
-        @NotBlank
-        //@ValidEnumCode(targetEnum = CurrencyCode.class, message = "{ValidEnumCode.CurrencyCode}")
         private String currency;
+
         private BigDecimal amount;
 
 
     }
 
 
-    public static Source source;
-    @Data
-    public static class Source {
 
-
-
-    }
-
-    public static Destination destination;
-    @Data
-    public static class Destination {
-
-
-
-    }
 
 
 }
