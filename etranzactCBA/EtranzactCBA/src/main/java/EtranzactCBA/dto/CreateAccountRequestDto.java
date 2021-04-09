@@ -13,7 +13,6 @@ import java.math.BigDecimal;
 @Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
-//@JsonDeserialize(builder = CreateAccountRequestDto.class)
 public class CreateAccountRequestDto {
 
     @Getter
