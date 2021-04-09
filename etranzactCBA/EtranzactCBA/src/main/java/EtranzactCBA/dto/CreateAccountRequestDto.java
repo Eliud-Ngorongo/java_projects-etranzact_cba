@@ -16,8 +16,6 @@ import java.math.BigDecimal;
 //@JsonDeserialize(builder = CreateAccountRequestDto.class)
 public class CreateAccountRequestDto {
 
-    //@JsonProperty("user")
-
     @Getter
     public User user;
 
