@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "7b78b30a-c64a-4a3b-b045-d2073e72bcd4",
+		"name": "EtranzactCBA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createAccout + User Node",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\" : {\n        \"accountType\" : \"SAVINGS\", \n\n        \"userNameFirst\" : \"John\",\n        \"userNameMiddle\" : \"Jali\",\n        \"userNameLast\" : \"Doe\",\n\n        \"userDOB\" : \"1987-08-21\",\n        \"profession\" : \"Software Developer\",\n        \"phoneNumber\" : \"+233 242 550 332\",\n        \"address\" : \"Box NT 277, Ksi.\",\n\n        \"verified\" : 0\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/createAccountRequest",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"createAccountRequest"
+					]
+				},
+				"description": "this creates an account for this 'rich' customer"
+			},
+			"response": []
+		},
+		{
+			"name": "createAccout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"accountType\" : \"SAVINGS\", \n\n    \"userNameFirst\" : \"John\",\n    \"userNameMiddle\" : \"Jali\",\n    \"userNameLast\" : \"Doe\",\n\n    \"userDOB\" : \"1987-08-21\",\n    \"profession\" : \"Software Developer\",\n    \"phoneNumber\" : \"+233 242 550 332\",\n    \"address\" : \"Box NT 277, Ksi.\",\n\n    \"verified\" : 0\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/createAccountRequest",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"createAccountRequest"
+					]
+				},
+				"description": "this creates an account for this 'rich' customer"
+			},
+			"response": []
+		},
+		{
+			"name": "checkAccount -> balance",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\" : {\n        \"accountType\" : \"SAVINGS\", \n\n        \"userNameFirst\" : \"John\",\n        \"userNameMiddle\" : \"Jali\",\n        \"userNameLast\" : \"Doe\",\n\n        \"userDOB\" : \"1987-08-21\",\n        \"profession\" : \"Software Developer\",\n        \"phoneNumber\" : \"+233 242 550 332\",\n        \"address\" : \"Box NT 277, Ksi.\",\n\n        \"verified\" : 0\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/checkAccount/balance?userId=123456789&accountNum=IDSE749SH98RYF38384",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"checkAccount",
+						"balance"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "123456789"
+						},
+						{
+							"key": "accountNum",
+							"value": "IDSE749SH98RYF38384"
+						}
+					]
+				},
+				"description": "this creates an account for this 'rich' customer"
+			},
+			"response": []
+		},
+		{
+			"name": "transactions -> Payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\" : {\n        \"accountType\" : \"SAVINGS\", \n\n        \"userNameFirst\" : \"John\",\n        \"userNameMiddle\" : \"Jali\",\n        \"userNameLast\" : \"Doe\",\n\n        \"userDOB\" : \"1987-08-21\",\n        \"profession\" : \"Software Developer\",\n        \"phoneNumber\" : \"+233 242 550 332\",\n        \"address\" : \"Box NT 277, Ksi.\",\n\n        \"verified\" : 0\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}createAccountRequest",
+					"host": [
+						"{{localhost}}createAccountRequest"
+					]
+				},
+				"description": "this creates an account for this 'rich' customer"
+			},
+			"response": []
+		},
+		{
+			"name": "transactions -> Payout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\" : {\n        \"accountType\" : \"SAVINGS\", \n\n        \"userNameFirst\" : \"John\",\n        \"userNameMiddle\" : \"Jali\",\n        \"userNameLast\" : \"Doe\",\n\n        \"userDOB\" : \"1987-08-21\",\n        \"profession\" : \"Software Developer\",\n        \"phoneNumber\" : \"+233 242 550 332\",\n        \"address\" : \"Box NT 277, Ksi.\",\n\n        \"verified\" : 0\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/transactions/payout",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"transactions",
+						"payout"
+					]
+				},
+				"description": "this creates an account for this 'rich' customer"
+			},
+			"response": []
+		},
+		{
+			"name": "transactions -> transfer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\" : {\n        \"accountType\" : \"SAVINGS\", \n\n        \"userNameFirst\" : \"John\",\n        \"userNameMiddle\" : \"Jali\",\n        \"userNameLast\" : \"Doe\",\n\n        \"userDOB\" : \"1987-08-21\",\n        \"profession\" : \"Software Developer\",\n        \"phoneNumber\" : \"+233 242 550 332\",\n        \"address\" : \"Box NT 277, Ksi.\",\n\n        \"verified\" : 0\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/transactions/transfer",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"transactions",
+						"transfer"
+					]
+				},
+				"description": "this creates an account for this 'rich' customer"
+			},
+			"response": []
+		}
+	]
+}

@@ -29,7 +29,7 @@ public class CreateAccountRequestController {
           @Body  CreateAccountRequestDto createAccountRequestDto
     ) {
 
-        LOGGER.info("The request body for the endpoint : /createAccountRequest : {}", createAccountRequestDto.toString());
+        LOGGER.info("The request body : /createAccountRequest : {}", createAccountRequestDto.toString());
 
         return createAccountService.createAccountRequested(createAccountRequestDto);
     }
