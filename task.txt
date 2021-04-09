@@ -1,0 +1,52 @@
+#QUESTION :
+
+CODING CHALLENGE
+
+PROJECT DURATION: 2 hrs
+
+
+1BS Bank
+1BS Bank was established in February 2019. The bank aims to attract new customers particularly the elite in society by investing huge capital into Technology. As a new bank their drive and focus in this highly competitive industry is to become the best in their digital offerings. Currently the IT Department is looking to collaborate with a FinTech Company to offer easy banking solutions to their customers.
+Before engaging the FinTech Company, the IT Team will have to design and implement the Core Banking Application (CBA) for third parties (FinTechs, Aggregators etc.) to connect. The IT Team have contracted your company, SkyLine Softwares to design, build and manage the CBA.
+You have been given tight deadlines to deliver this project.
+Below are the key extracts from the Requirement Document that has been emailed to SkyLine.
+
+Part A
+Provide functionalities below
+1. Customer to open an account.
+Addendum on 1
+a) The account can be either a CURRENT or SAVINGS account.
+b) The bank currently have seven branches
+c) A customer can only open one account per each account type
+d) Generate unique account numbers for each account opened of 12-digit length.
+e) Key customer KYC should include but not limited to ID (passport or voters), DOB, sex, profession, phone number and address.
+f) Minimum amount required to open a current account is Ghȼ10.
+g) Minimum amount required to open a savings account is Ghȼ50.
+
+2. There is a 1% charge on every CURRENT account transaction.
+In addition, the daily total withdrawal shall not exceed Ghȼ5000 for all account types.
+
+
+3. Provide the following core financial services:
+a) Balance check
+b) Deposit
+c) Funds transfer
+d) Withdrawal
+(ADDENDUM ON d)
+No withdrawal shall result in the balance been less than the minimum amount required to open that account
+e) Mini statement of the last five transactions - show date, amount, and type (debit/credit) debit amount should display in bracket.
+f) Account closure
+
+THE CHALLENGE
+Develop a Java web service for the functionalities listed in item 3
+Submit your solution via email to seth.sebeh@etranzact.com.gh.
+Your submission should include the Database scripts, java source code and any other files you want to add.
+
+Guidelines
+Our interest is in the clarity of code and the technical skills you apply in solving the problem.
+You do not have to complete every requirement and functionalities listed above.
+
+
+
+
+Thank you and good luck

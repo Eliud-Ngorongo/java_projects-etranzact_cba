@@ -1,0 +1,100 @@
+#SUGGESTED SOLUTION :
+
+1. Analyse the software requirements and then
+
+Plan for the elements that would be required.
+
+a. tools
+b. framework
+
+
+Create a repository so the client can see vivid levels of progress of the project
+and potential have even their own I.T Team test the application remotely.
+
+Create a repository at github (preferrably : PRIVATE), but for now we would use
+public.
+
+
+The framework choosen would be micronauts over spring. (they are similar any ways)
+
+Plan on the database structure.
+
+
+
+
+Starting the code :
+
+
+1. Open the terminal and create a micronaut project + controllers
+
+#Do the following in the terminal :
+
+Last login: Fri Apr  9 10:33:48 on ttys004
+Emmanuels-MacBook-Pro:~ emap$ cd /Users/emap/gitAhead/etransact_cba/java_projects-etranzact_cba/etranzactCBA
+Emmanuels-MacBook-Pro:etranzactCBA emap$ ls
+Emmanuels-MacBook-Pro:etranzactCBA emap$ mn create-app EtranzactCBA
+| Application created at /Users/emap/gitAhead/etransact_cba/java_projects-etranzact_cba/etranzactCBA/EtranzactCBA
+Emmanuels-MacBook-Pro:etranzactCBA emap$ mn create-controller createAccountRequest
+Unmatched arguments from index 0: 'create-controller', 'createAccountRequest'
+Did you mean: create-app or create-cli-app or create-function-app?
+Emmanuels-MacBook-Pro:etranzactCBA emap$ ls
+EtranzactCBA
+Emmanuels-MacBook-Pro:etranzactCBA emap$ cd EtranzactCBA/
+Emmanuels-MacBook-Pro:EtranzactCBA emap$ mn create-controller createAccountRequest
+| Rendered controller to src/main/java/EtranzactCBA/CreateAccountRequestController.java
+| Rendered test to src/test/java/EtranzactCBA/CreateAccountRequestControllerTest.java
+Emmanuels-MacBook-Pro:EtranzactCBA emap$ mn create-controller getAccountCreated
+| Rendered controller to src/main/java/EtranzactCBA/GetAccountCreatedController.java
+| Rendered test to src/test/java/EtranzactCBA/GetAccountCreatedControllerTest.java
+Emmanuels-MacBook-Pro:EtranzactCBA emap$ mn create-controller updateAccountCreated
+| Rendered controller to src/main/java/EtranzactCBA/UpdateAccountCreatedController.java
+| Rendered test to src/test/java/EtranzactCBA/UpdateAccountCreatedControllerTest.java
+Emmanuels-MacBook-Pro:EtranzactCBA emap$ mn create-controller activateAccountCreated
+| Rendered controller to src/main/java/EtranzactCBA/ActivateAccountCreatedController.java
+| Rendered test to src/test/java/EtranzactCBA/ActivateAccountCreatedControllerTest.java
+Emmanuels-MacBook-Pro:EtranzactCBA emap$ deactivateAccountCreated
+-bash: deactivateAccountCreated: command not found
+Emmanuels-MacBook-Pro:EtranzactCBA emap$ mn create-controller deactivateAccountCreated
+| Rendered controller to src/main/java/EtranzactCBA/DeactivateAccountCreatedController.java
+| Rendered test to src/test/java/EtranzactCBA/DeactivateAccountCreatedControllerTest.java
+Emmanuels-MacBook-Pro:EtranzactCBA emap$ mn create-controller getAccountCreatedKYCStatus
+| Rendered controller to src/main/java/EtranzactCBA/GetAccountCreatedKYCStatusController.java
+| Rendered test to src/test/java/EtranzactCBA/GetAccountCreatedKYCStatusControllerTest.java
+Emmanuels-MacBook-Pro:EtranzactCBA emap$ mn create-controller updateAccountCreatedKYCStatus
+| Rendered controller to src/main/java/EtranzactCBA/UpdateAccountCreatedKYCStatusController.java
+| Rendered test to src/test/java/EtranzactCBA/UpdateAccountCreatedKYCStatusControllerTest.java
+Emmanuels-MacBook-Pro:EtranzactCBA emap$ mn create-controller transactions
+| Rendered controller to src/main/java/EtranzactCBA/TransactionsController.java
+| Rendered test to src/test/java/EtranzactCBA/TransactionsControllerTest.java
+Emmanuels-MacBook-Pro:EtranzactCBA emap$ mn create-controller checkAccountBalance
+| Rendered controller to src/main/java/EtranzactCBA/CheckAccountBalanceController.java
+| Rendered test to src/test/java/EtranzactCBA/CheckAccountBalanceControllerTest.java
+Emmanuels-MacBook-Pro:EtranzactCBA emap$
+
+
+2. With the following controllers successfully created :
+
+# Upnext : Import project into a preferred IDE : (Choice : InteliJ)
+
+  # We can use maven or gardle for the project; in my case I would choose gradle :
+  I am more comfortable with that.
+
+
+
+Please Note : we would be using lombok to reduce boilerplate code to make sure that
+we write less code and also increase performance and reduce chances errors in code.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.

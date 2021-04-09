@@ -1,0 +1,5 @@
+micronaut:
+  application:
+    name: etranzactCBA
+  server:
+    port: 48933
