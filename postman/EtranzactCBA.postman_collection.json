@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"user\" : {\n        \"accountType\" : \"SAVINGS\", \n\n        \"userNameFirst\" : \"John\",\n        \"userNameMiddle\" : \"Jali\",\n        \"userNameLast\" : \"Doe\",\n\n        \"userDOB\" : \"1987-08-21\",\n        \"profession\" : \"Software Developer\",\n        \"phoneNumber\" : \"+233 242 550 332\",\n        \"address\" : \"Box NT 277, Ksi.\",\n\n        \"verified\" : 0\n    }\n}",
+					"raw": "{\"user\" : {\n\n        \"account_type\" : \"SAVINGS\",\n\n        \"account_branch\" : \"Branch00\",\n\n        \"user_id\" : \"DJ8S8734JFIOYETIME9\",\n        \"account_number\" : \"387729405873645583\",\n\n        \"user_name_first\" : \"John\",\n        \"user_name_middle\" : \"Jali\",\n        \"user_name_last\" : \"Doe\",\n\n        \"user_dob\" : \"1987-08-21\",\n        \"profession\" : \"Software Developer\",\n        \"phone_number\" : \"+233 242 550 332\",\n        \"address\" : \"Box NT 277, Ksi.\",\n\n        \"verified\" : 0,\n\n        \"transaction_channel\" : \"BANK\",\n\n        \"currency\" : \"GHS\",\n\n        \"amount\" : 50.00\n\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -39,7 +39,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"accountType\" : \"SAVINGS\", \n\n    \"userNameFirst\" : \"John\",\n    \"userNameMiddle\" : \"Jali\",\n    \"userNameLast\" : \"Doe\",\n\n    \"userDOB\" : \"1987-08-21\",\n    \"profession\" : \"Software Developer\",\n    \"phoneNumber\" : \"+233 242 550 332\",\n    \"address\" : \"Box NT 277, Ksi.\",\n\n    \"verified\" : 0\n    \n}",
+					"raw": "{\n    \"account_type\" : \"SAVINGS\",\n\n        \"account_branch\" : \"Branch00\",\n\n        \"user_id\" : \"DJ8S8734JFIOYETIME9\",\n        \"account_number\" : \"387729405873645583\",\n\n        \"user_name_first\" : \"John\",\n        \"user_name_middle\" : \"Jali\",\n        \"user_name_last\" : \"Doe\",\n\n        \"user_dob\" : \"1987-08-21\",\n        \"profession\" : \"Software Developer\",\n        \"phone_number\" : \"+233 242 550 332\",\n        \"address\" : \"Box NT 277, Ksi.\",\n\n        \"verified\" : 0,\n\n        \"transaction_channel\" : \"BANK\",\n\n        \"currency\" : \"GHS\",\n\n        \"amount\" : 50.00\n    \n}",
 					"options": {
 						"raw": {
 							"language": "json"
