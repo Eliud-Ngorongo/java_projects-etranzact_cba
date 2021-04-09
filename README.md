@@ -119,44 +119,21 @@ export ZEEPAY_USERNAME=
 export ZEEPAY_PASSWORD=
 export HMAC_SECRET_KEY=
 
-## If TellerNet's mobile money fund transfer is not working, set this to false.
-export TELLERNET_MOBILE_MONEY_FUND_TRANSFER_WORKING=
 
 ## Path to your ngrok executable.
 export NGROK_PATH=
 ```
 
-## Building the Application
-
-### Run Tests, Build executable jar, Build Docker image
-
-```
-./mvnw clean install
-```
-
-### Build without running tests
-
-_This is not advisable._ The great thing about micronaut is that it is lightweight and has fast startup time. This allows us to create a lot of integration tests and run them really fast locally.
-
-```
-./mvnw clean install -DskipTests
-```
-
-### Running your local database
-
-A Docker Compose file is in the source code as well. This allows for consistent setup of database (and potentially, any other 3rd party applications that would be used in the futrue).
-
-```
-cd ./infra
-docker-compose up
-```
 
 To stop this, just do Ctrl+C.
 
 ### Running the application locally
 
-A maven profile was created to run the application locally. In production, the main class used is `com.waya.system.database.MainApplication`. In development, `com.waya.system.database.test.MainApplicationWithNgrok` is used instead. That is because `MainApplicationWithNgrok` takes care of running your ngrok locally before running `MainApplication`. In production, ngrok is not needed, that is why `MainApplication` is what is used in production and not `MainApplicationWithNgrok`   
+A maven profile was created to run the application locally. In production, the main class used is `EtranzactCBA.Application`. In development, `EtranzactCBA.test.ApplicationWithNgrok` is used instead. That is because `ApplicationWithNgrok` takes care of running your ngrok locally before running `Application`. In production, ngrok is not needed, that is why `Application` is what is used in production and not `ApplicationWithNgrok`   
 
+```
+./gradlew run
+```
 ```
 ./mvnw -Prun
 ```
