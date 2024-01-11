@@ -1,0 +1,18 @@
+# Use an official OpenJDK runtime as a parent image
+FROM openjdk:8-jre-slim
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the Gradle wrapper files and build.gradle
+COPY gradlew .
+COPY gradle gradle
+COPY build.gradle .
+
+# Copy the source code
+COPY src src
+
+# Build the application
+RUN ./gradlew build
+
+# Set the entry point to run your application
+ENTRYPOINT ["./gradlew", "run"]

@@ -1,0 +1,7 @@
+EtranzactCBA.pojo.$CardAccount$IntrospectionRef
+EtranzactCBA.pojo.$TransactionAccount$IntrospectionRef
+EtranzactCBA.pojo.$TransferRecipientAmount$IntrospectionRef
+EtranzactCBA.pojo.$TransactionAmount$IntrospectionRef
+EtranzactCBA.pojo.$BankAccount$IntrospectionRef
+EtranzactCBA.pojo.$MobileMoneyAccount$IntrospectionRef
+EtranzactCBA.pojo.$EWalletAccount$IntrospectionRef
